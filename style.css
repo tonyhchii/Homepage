@@ -11,12 +11,13 @@ body {
 }
 
 .header-img {
-  height: 500px;
-  width: min(100% - 20px, 400px);
+  width: 350px;
+  height: 350px;
   position: relative;
   text-align: end;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  z-index: 2;
 }
 
 img {
@@ -28,12 +29,18 @@ img {
   position: absolute;
   color: beige;
   top: 5px;
-  right: 5px;
   line-height: 1em;
   font-size: 4.8rem;
   font-weight: 600;
   width: 100%;
   text-align: right;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
 
 .container {
@@ -50,6 +57,7 @@ img {
 .about-me {
   padding: 1.2rem;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 .about-me h2 {
   font-size: 2.5rem;
@@ -82,6 +90,7 @@ p {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  text-align: center;
 }
 
 .contact-info {
@@ -91,9 +100,22 @@ p {
   align-items: center;
   gap: 0.3rem;
 }
-
+.project-title {
+  display: flex;
+  justify-content: space-between;
+}
+.project-title i {
+  font-size: 1.5rem;
+}
 .footer-img {
-  width: min(100% - 20px, 400px);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+  max-width: 350px;
+  max-height: 350px;
+  overflow: hidden;
+}
+
+i {
+  font-size: 2rem;
 }
 
 @media (min-width: 800px) {
@@ -104,6 +126,11 @@ p {
     font-size: 4.3rem;
     text-align: center;
   }
+
+  .header-img {
+    width: min(100% - 20px, 400px);
+  }
+
   .header {
     grid-template-columns: 400px minmax(400px, 50%);
   }
@@ -112,12 +139,39 @@ p {
   }
 
   .footer {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
   }
 
+  .footer-img {
+    width: min(100% - 20px, 400px);
+  }
+
   .contact-info {
     align-items: flex-start;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1100px) {
+  .header.container {
+    display: block;
+    position: relative;
+  }
+  .header-img {
+    float: left;
+    position: relative;
+    margin-right: 1rem;
+  }
+  .about-me {
+    margin: 8rem;
+    margin-left: 15em;
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .about-me {
+    width: min(100vw - 40px, 600px);
   }
 }
